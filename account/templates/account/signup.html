@@ -50,42 +50,49 @@
                     <div class="login-form-wrap">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#"><i class="icofont-users-alt-4"></i> Log In </a>
+                                <a class="nav-link" href="{% url 'login' %}"><i class="icofont-users-alt-4"></i> Log In </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'signup' %}"><i class="icofont-download"></i> Registration</a>
+                                <a class="nav-link active" href="#"><i class="icofont-download"></i> Registration</a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane login-tab fade show active" role="tabpanel">
-                                <h3 class="item-title">Login Into <span>Your Account</span></h3>
-                                <div class="google-signin">
-                                    <a href="login.html#"><img src="{% static 'media/figure/google-icon.png' %}" alt="Google">Google Log in</a>
-                                </div>
-                                <form action="{% url 'login' %}" method="POST">
-                                    {% csrf_token %}
+                            <div class="tab-pane registration-tab fade show active">
+                                <h3 class="item-title">Sign Up Your Account</h3>
+                                <form>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="username" placeholder="Your Username">
+                                        <input type="text" name="fname" class="form-control" placeholder="First Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" name="password" placeholder="Your Password">
+                                        <input type="text" name="lname" class="form-control" placeholder="Last Name">
                                     </div>
-                                    <div class="form-group reset-password">
-                                        <a href="login.html#">* Reset Password</a>
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="E-mail">
                                     </div>
-                                    <div class="form-group mb-4">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="validationFormCheck2">
-                                            <label class="form-check-label" for="validationFormCheck2">Keep me as loged in</a></label>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Type Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" name="date" class="form-control" placeholder="Your Birth Day">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="select2" name="gender" data-placeholder="Select Gender">
+                                            <option value=""></option>
+                                            <option value="male">Male</option>
+                                            <option value="male">Female</option>
+                                            <option value="transgender">Transgender</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check mb-3">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1">
+                                            <label class="form-check-label" for="validationFormCheck1">I accept the <a href="login.html#">Terms and Conditions</a></label>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="submit-btn" value="Login">
+                                        <input type="submit" name="registration" class="submit-btn" value="Complete Registration">
                                     </div>
                                 </form>
-                                <!-- <div class="account-create">
-                              		Don't have an account yet? <a href="#registration-tab">Sign Up Now</a>
-                              	</div> -->
                             </div>
                         </div>
                     </div>

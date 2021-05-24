@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <div style="text-align: center">
+        <h1 >HOME-PAGE</h1>
+        <hr>
+        <h1 style="margin-top:50px;">Hello {{ request.user|capfirst }}</h1>
+        <a href="{% url 'logout' %}"><button type="button" name="button">LOGOUT</button></a>
+      </div>
+  </body>
+</html>

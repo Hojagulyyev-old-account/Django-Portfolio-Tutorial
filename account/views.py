@@ -9,7 +9,7 @@ def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login'))
 
-    return HttpResponse("Home Page")
+    return render(request, 'account/homepage.html')
 
 
 ''' LoginViewController '''
@@ -28,3 +28,10 @@ def loginView(request):
             return render(request, 'account/login.html')
 
     return render(request, 'account/login.html')
+
+def signUp(request):
+    return render(request, 'account/signup.html')
+
+def logOut(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('login'))
